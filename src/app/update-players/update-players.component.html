@@ -1,0 +1,84 @@
+<html>
+  <form>
+    <div>
+      <h1>Update Player</h1>
+      <input
+        style="text-align-last: start"
+        type="hidden"
+        name="player_id"
+        id="player_id"
+        #player_id
+        value="{{ data.player_id }}"
+      /><br />
+      <label><b>Name</b></label
+      >&nbsp;&nbsp;&nbsp;&nbsp;
+      <input
+        style="text-align-last: start"
+        type="text"
+        name="name"
+        id="name"
+        #name
+        value="{{ data.name }}"
+      /><br />
+      <label><b>Matches</b></label
+      >&nbsp;
+      <input
+        style="text-align-last: start"
+        type="number"
+        name="matches"
+        id="matches"
+        value="{{ data.matches }}"
+        #matches
+      /><br />
+      <label><b>Runs</b></label
+      >&nbsp;
+      <input
+        style="text-align-last: start"
+        type="number"
+        name="runs"
+        id="runs"
+        value="{{ data.runs }}"
+        #runs
+      /><br />
+      <label><b>Balls Faced</b></label
+      >&nbsp;
+      <input
+        style="text-align-last: start"
+        type="number"
+        name="ballsFaced"
+        id="ballsFaced"
+        value="{{ data.ballsFaced }}"
+        #ballsFaced
+      /><br />
+      <label><b>Batting Strike Rate</b></label
+      >&nbsp;
+      <input
+        style="text-align-last: start"
+        type="number"
+        name="battingStrikeRate"
+        id="battingStrikeRate"
+        value="{{ data.battingStrikeRate }}"
+        #battingStrikeRate
+      /><br /><br />
+      <button
+        type="submit"
+        style="margin-right: 6%"
+        (click)="
+          Update(
+            player_id.value,
+            name.value,
+            matches.value,
+            runs.value,
+            ballsFaced.value,
+            battingStrikeRate.value
+          )
+        "
+      >
+        Update
+      </button>
+      <button type="button">
+        <a routerLink="/show-all-players">Back</a>
+      </button>
+    </div>
+  </form>
+</html>

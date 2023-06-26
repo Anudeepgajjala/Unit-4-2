@@ -1,0 +1,70 @@
+<html>
+  <div>
+    <h1>Add Player</h1>
+
+    <label><b>Name</b></label
+    >&nbsp;&nbsp;&nbsp;&nbsp;
+    <input
+      style="text-align-last: start"
+      type="text"
+      name="name"
+      id="name"
+      #name
+    /><br />
+    <label><b>Matches</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="number"
+      name="matches"
+      id="matches"
+      #matches
+    /><br />
+    <label><b>Runs</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="number"
+      name="runs"
+      id="runs"
+      #runs
+    /><br />
+    <label><b>Balls Faced</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="number"
+      name="ballsFaced"
+      id="ballsFaced"
+      #ballsFaced
+    /><br />
+    <label><b>Batting Strike Rate</b></label
+    >&nbsp;
+    <input
+      style="text-align-last: start"
+      type="number"
+      name="battingStrikeRate"
+      id="battingStrikeRate"
+      #battingStrikeRate
+    /><br />
+    <br />
+    <button
+      type="button"
+      style="margin-right: 6%"
+      (click)="
+        AddPlayer(
+          name.value,
+          matches.value,
+          runs.value,
+          ballsFaced.value,
+          battingStrikeRate.value
+        )
+      "
+    >
+      Add Player
+    </button>
+    <button type="button">
+      <a routerLink="/show-all-players">back</a>
+    </button>
+  </div>
+</html>

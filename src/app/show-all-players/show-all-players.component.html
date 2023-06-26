@@ -1,0 +1,65 @@
+<div>
+  <h1>Vandana Team Details</h1>
+  <button type="button">
+    <a routerLink="/add-players">Add player</a>
+  </button>
+  <label>Choose filter</label>
+  <select
+    class="select-option"
+    #filterValue
+    (change)="selectedFilter(filterValue.value)"
+  >
+    <option value="none">none</option>
+    <option value="who-played-least-matches">Least Matches</option>
+    <option value="players-list-by-runs">List By Runs</option>
+    <option value="who-scored-highest-runs">Highest Runs</option>
+    <option value="who-faced-more-balls">Faced More Balls</option>
+    <option value="who-is-having-least-batting-strike-rate">
+      Least Batting Strike Rate
+    </option>
+  </select>
+
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
+  <table style="width: 75%; margin-left: 13%">
+    <tr>
+      <th>Name</th>
+      <th>Matches</th>
+      <th>Runs</th>
+      <th>Balls Faced</th>
+      <th>Batting Strike Rate</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let post of data">
+      <td>{{ post?.name }}</td>
+      <td>{{ post?.matches }}</td>
+      <td>{{ post?.runs }}</td>
+      <td>{{ post?.ballsFaced }}</td>
+      <td>{{ post?.battingStrikeRate }}</td>
+      <td>
+        <button type="button">
+          <a routerLink="/update-players" [state]="post">Update</a>
+        </button>
+        <button type="button" (click)="deletePlayer(post.player_id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
